@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أكوادرا للسياحة والسفر | تجارب لا تُنسى</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-50 text-slate-800 font-[Cairo]">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 navbar-glass" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center cursor-pointer transform hover:scale-105 transition-transform">
+                    <div class="w-10 h-10 bg-gradient-to-br from-teal-400 to-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl ml-2 shadow-lg">
+                        A
+                    </div>
+                    <span class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-blue-600">أكوادرا</span>
+                </div>
+                <div class="hidden md:flex space-x-8 space-x-reverse">
+                    <a href="#home" class="nav-link text-slate-600 hover:text-blue-600 font-semibold transition-colors">الرئيسية</a>
+                    <a href="#destinations" class="nav-link text-slate-600 hover:text-blue-600 font-semibold transition-colors">الوجهات</a>
+                    <a href="#packages" class="nav-link text-slate-600 hover:text-blue-600 font-semibold transition-colors">الباقات</a>
+                    <button id="my-bookings-btn" class="text-slate-600 hover:text-blue-600 font-semibold transition-colors relative">
+                        إدارة الحجوزات
+                        <span id="booking-badge" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full opacity-0 transition-opacity">0</span>
+                    </button>
+                </div>
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <button class="bg-gradient-to-r from-blue-600 to-teal-500 text-white px-6 py-2 rounded-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300 font-bold text-sm">
+                        تسجيل الدخول
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Wrapper -->
+    <div id="main-content">
+        
+        <!-- Hero Section -->
+        <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1542259659-4ab2877c819a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80" alt="Background" class="w-full h-full object-cover opacity-90">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
+            </div>
+
+            <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-slide-up">
+                    اكتشف العالم بأسلوب <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-blue-400">استثنائي</span>
+                </h1>
+                <p class="text-xl text-slate-200 mb-10 max-w-2xl mx-auto animate-slide-up animation-delay-200">
+                    منصة أكوادرا تأخذك في رحلة لا تُنسى. خطط، احجز، وانطلق في مغامرتك القادمة بكل سهولة.
+                </p>
+                
+                <!-- Search Box -->
+                <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl shadow-2xl border border-white/20 animate-slide-up animation-delay-400 max-w-3xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <div class="relative">
+                            <i class="fa-solid fa-location-dot absolute top-3.5 right-4 text-slate-300"></i>
+                            <input type="text" placeholder="إلى أين؟" class="w-full bg-white/10 text-white placeholder-slate-300 border border-white/20 rounded-xl py-3 pr-10 pl-4 focus:outline-none focus:bg-white/20 transition-all">
+                        </div>
+                        <div class="relative">
+                            <i class="fa-solid fa-calendar absolute top-3.5 right-4 text-slate-300"></i>
+                            <input type="date" class="w-full bg-white/10 text-white border border-white/20 rounded-xl py-3 pr-10 pl-4 focus:outline-none focus:bg-white/20 transition-all">
+                        </div>
+                        <div class="relative">
+                            <i class="fa-solid fa-user-group absolute top-3.5 right-4 text-slate-300"></i>
+                            <select class="w-full bg-white/10 text-white border border-white/20 rounded-xl py-3 pr-10 pl-4 focus:outline-none focus:bg-white/20 transition-all appearance-none cursor-pointer">
+                                <option class="text-slate-800">مسافر واحد</option>
+                                <option class="text-slate-800">زوجين</option>
+                                <option class="text-slate-800">عائلة</option>
+                            </select>
+                        </div>
+                        <button class="bg-gradient-to-r from-teal-500 to-blue-600 text-white rounded-xl py-3 font-bold hover:shadow-[0_0_20px_rgba(37,99,235,0.5)] transition-all duration-300 hover:scale-105 active:scale-95">
+                            بحث الآن
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Legacy Welcome Section (Preserved & Enhanced) -->
+        <section class="py-16 bg-white relative overflow-hidden">
+            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-teal-50 rounded-full blur-3xl opacity-50"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row items-center justify-center gap-12">
+                    <div class="md:w-1/2 text-right">
+                        <span class="text-blue-600 font-bold tracking-wider uppercase text-sm">مرحباً بك في أكوادرا</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mt-2 mb-4">المنشئ الخارق لتجارب السفر</h2>
+                        <p class="text-slate-600 text-lg leading-relaxed mb-6">
+                            نحن نساعدك على بناء ذكريات جميلة. سواء كنت تبحث عن الهدوء أو المغامرة، أكوادرا هو رفيقك الذكي.
+                        </p>
+                        <!-- Original Card Structure Preserved with Class 'card' -->
+                        <div class="bg-gradient-to-br from-indigo-50 to-white p-6 rounded-2xl shadow-lg border border-indigo-100 hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer card group w-full md:w-96">
+                            <div class="flex items-center gap-4">
+                                <div class="w-14 h-14 bg-indigo-100 rounded-full flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300">
+                                     <svg class="w-7 h-7 text-indigo-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                                </div>
+                                <div>
+                                    <h2 class="text-xl font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">ابدأ رحلتك</h2>
+                                    <p class="text-gray-500 text-sm">اضغط هنا لاكتشاف المفاجأة</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-sm text-gray-400 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                            مدعوم بواسطة Gemini 3 Pro
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="relative">
+                             <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" class="rounded-2xl shadow-2xl rotate-3 hover:rotate-0 transition-all duration-500 w-full object-cover h-80">
+                             <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl animate-float">
+                                <div class="flex items-center gap-3">
+                                    <div class="text-yellow-400 text-2xl">⭐⭐⭐⭐⭐</div>
+                                    <div class="font-bold text-slate-800">+5000 مسافر سعيد</div>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Destinations Section -->
+        <section id="destinations" class="py-20 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-slate-800 mb-4">وجهات مميزة</h2>
+                    <p class="text-slate-600 max-w-2xl mx-auto">اختر وجهتك القادمة من بين أجمل الأماكن السياحية حول العالم التي اخترناها لك بعناية.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="destinations-grid">
+                    <!-- Destinations injected by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Packages Section -->
+        <section id="packages" class="py-20 bg-white relative">
+             <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjI2L 232, 240, 0.4)" /> </svg>')] opacity-50"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="flex justify-between items-end mb-12">
+                    <div>
+                        <h2 class="text-4xl font-bold text-slate-800 mb-2">باقات سياحية شاملة</h2>
+                        <p class="text-slate-500">كل ما تحتاجه في مكان واحد: طيران، فنادق، وجولات.</p>
+                    </div>
+                    <a href="#" class="text-blue-600 font-bold hover:text-blue-700 flex items-center gap-2 group">
+                        عرض كل الباقات 
+                        <i class="fa-solid fa-arrow-left transform group-hover:-translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="packages-grid">
+                    <!-- Packages injected by JS -->
+                </div>
+            </div>
+        </section>
+
+    </div> <!-- End Main Content -->
+
+    <!-- Booking Management Section (Hidden by default) -->
+    <div id="bookings-section" class="hidden pt-24 pb-20 min-h-screen bg-slate-50">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold text-slate-800">إدارة الحجوزات</h2>
+                <button id="back-to-home" class="flex items-center gap-2 text-slate-600 hover:text-blue-600 transition-colors">
+                    <i class="fa-solid fa-house"></i>
+                    العودة للرئيسية
+                </button>
+            </div>
+            
+            <div id="bookings-list" class="space-y-6">
+                <!-- Bookings injected by JS -->
+                <div class="text-center py-20 bg-white rounded-2xl shadow-sm border border-slate-100">
+                    <div class="w-20 h-20 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-regular fa-calendar-xmark text-3xl text-slate-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-700">لا توجد حجوزات حالياً</h3>
+                    <p class="text-slate-500 mt-2">لم تقم بحجز أي رحلة بعد. تصفح الباقات وابدأ مغامرتك!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Itinerary Modal -->
+    <div id="itinerary-modal" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" id="modal-backdrop"></div>
+        <div class="absolute inset-0 flex items-center justify-center p-4">
+            <div class="bg-white rounded-3xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden flex flex-col transform scale-95 opacity-0 transition-all duration-300" id="modal-content">
+                <!-- Modal Header -->
+                <div class="relative h-48 md:h-64">
+                    <img id="modal-img" src="" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+                    <button id="close-modal" class="absolute top-4 left-4 w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-white/40 transition-all">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                    <div class="absolute bottom-6 right-6 text-white">
+                        <span class="px-3 py-1 bg-blue-600 rounded-lg text-sm font-bold mb-2 inline-block shadow-lg">باقة مميزة</span>
+                        <h3 id="modal-title" class="text-3xl font-bold"></h3>
+                        <div class="flex items-center gap-4 mt-2 text-slate-200">
+                            <span id="modal-duration"><i class="fa-regular fa-clock ml-1"></i></span>
+                            <span id="modal-location"><i class="fa-solid fa-location-dot ml-1"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="flex-1 overflow-y-auto p-8 custom-scrollbar">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Itinerary Timeline -->
+                        <div class="md:col-span-2">
+                            <h4 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                                <i class="fa-solid fa-route text-blue-600"></i>
+                                خطة الرحلة (Itinerary)
+                            </h4>
+                            <div class="relative border-r-2 border-slate-200 mr-3 space-y-8" id="timeline-container">
+                                <!-- Timeline items injected JS -->
+                            </div>
+                        </div>
+
+                        <!-- Booking Sidebar -->
+                        <div class="md:col-span-1">
+                            <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 sticky top-0">
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="text-slate-500">السعر للشخص</span>
+                                    <span id="modal-price" class="text-2xl font-bold text-blue-600"></span>
+                                </div>
+                                <hr class="border-slate-200 my-4">
+                                <ul class="space-y-3 mb-6 text-sm text-slate-600">
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> شامل تذاكر الطيران</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> إقامة فندقية 5 نجوم</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> مرشد سياحي خاص</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> وجبات الإفطار والعشاء</li>
+                                </ul>
+                                <button id="confirm-booking-btn" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 rounded-xl font-bold hover:shadow-xl hover:scale-105 transition-all duration-300">
+                                    احجز الآن
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-5 left-5 bg-white border-r-4 border-green-500 p-4 rounded-lg shadow-2xl transform translate-y-20 opacity-0 transition-all duration-500 z-[200] flex items-center gap-3">
+        <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+            <i class="fa-solid fa-check"></i>
+        </div>
+        <div>
+            <h5 class="font-bold text-slate-800">تم بنجاح!</h5>
+            <p class="text-sm text-slate-500">تم إضافة الحجز إلى قائمتك.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-white text-2xl font-bold mb-4">أكوادرا</h3>
+                <p class="mb-4">رفيقك الأمثل لاستكشاف العالم. نصنع ذكريات تدوم للأبد.</p>
+                <div class="flex space-x-4 space-x-reverse">
+                    <a href="#" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-pink-600 hover:text-white transition-all"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-800 hover:text-white transition-all"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">روابط سريعة</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-white transition-colors">من نحن</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">الوجهات</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">الباقات</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">المدونة</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">الدعم</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-white transition-colors">مركز المساعدة</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">اتصل بنا</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">السياسة والخصوصية</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">النشرة البريدية</h4>
+                <p class="mb-4 text-sm">اشترك ليصلك أحدث العروض الحصرية.</p>
+                <div class="flex">
+                    <input type="email" placeholder="بريدك الإلكتروني" class="bg-slate-800 text-white px-4 py-2 rounded-r-lg w-full focus:outline-none">
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-l-lg hover:bg-blue-700 transition-colors">اشترك</button>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 mt-12 pt-8 border-t border-slate-800 text-center text-sm">
+            © 2023 أكوادرا للسياحة. جميع الحقوق محفوظة.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
